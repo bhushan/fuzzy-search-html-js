@@ -10,7 +10,7 @@ hashtagInputElement.addEventListener("keyup", function (event) {
     return;
   }
 
-  const result = hashtags.filter((hashtag) => hashtag.startsWith(query));
+  const result = [];
 
   for (let index = 0; index < hashtags.length; index++) {
     let hashtag = hashtags[index];
@@ -34,5 +34,5 @@ hashtagInputElement.addEventListener("keyup", function (event) {
     }
   }
 
-  suggestionsElement.innerHTML = [...new Set(result)].join(", ");
+  suggestionsElement.innerHTML = result.join(", ");
 });
